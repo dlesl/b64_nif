@@ -33,7 +33,7 @@ static ERL_NIF_TERM encode(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
       return enif_make_badarg(env);
     }
     size_t encoded;
-    base64_encode(input.data, input.size, output.data, &encoded, 0);
+    base64_encode((char*)input.data, input.size, (char*)output.data, &encoded, 0);
     if (!enif_realloc_binary(&output, encoded)) {
       enif_release_binary(&output);
       return enif_make_badarg(env);
@@ -55,7 +55,7 @@ static ERL_NIF_TERM decode(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
       return enif_make_badarg(env);
     }
     size_t decoded;
-    if (!base64_decode(input.data, input.size, output.data, &decoded, 0)) {
+    if (!base64_decode((char*)input.data, input.size, (char*)output.data, &decoded, 0)) {
       return enif_make_badarg(env);
     }
     if (!enif_realloc_binary(&output, decoded)) {
