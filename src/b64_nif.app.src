@@ -1,5 +1,5 @@
 {application, b64_nif,
- [{description, "An OTP library"},
+ [{description, "Fast base64 encoder and decoder"},
   {vsn, "0.1.0"},
   {registered, []},
   {applications,
@@ -8,7 +8,7 @@
    ]},
   {env,[]},
   {modules, []},
-
+  {files, ["priv", "src", "c_src", "rebar.config", "LICENSE"]},
   {licenses, ["Apache 2.0"]},
-  {links, []}
+  {links, [{"GitHub", "https://github.com/dlesl/b64_nif"}]}
  ]}.
