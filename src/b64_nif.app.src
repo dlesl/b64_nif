@@ -1,6 +1,6 @@
 {application, b64_nif,
  [{description, "Fast base64 encoder and decoder"},
-  {vsn, "0.1.0"},
+  {vsn, "0.1.1"},
   {registered, []},
   {applications,
    [kernel,
