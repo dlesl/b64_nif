@@ -16,7 +16,7 @@ which takes a similar approach. This library behaves slightly differently in tha
 Use
 ---
 
-Add it to your `rebar.config`, for example `{deps, [{b64_nif, "0.1.0"}]}.`
+Add it to your `rebar.config`, for example `{deps, [{b64_nif, "0.1.1"}]}.`
 
 Use `b64_nif:encode/1` and `b64_nif:decode/1` as drop-in replacements for
 `base64:encode/1` and `base64:decode/1`.
