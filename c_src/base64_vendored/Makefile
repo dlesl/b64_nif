@@ -1,4 +1,4 @@
-CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic -fPIC
+CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic
 
 # Set OBJCOPY if not defined by environment:
 OBJCOPY ?= objcopy
