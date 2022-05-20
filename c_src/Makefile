@@ -5,12 +5,11 @@ BASE64 := base64_vendored
 
 OBJCOPY ?= true # not available by default on mac, but not needed
 
-CFLAGS += -fPIC
-
 ifeq ($(shell uname -s), Darwin)
 	SO_LD_FLAGS := -undefined dynamic_lookup -dynamiclib
 else
 	SO_LD_FLAGS := -fpic -shared
+	export CFLAGS += -fpic
 endif
 
 all: ../priv/b64_nif.so
