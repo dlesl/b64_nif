@@ -9,6 +9,7 @@ ifeq ($(shell uname -s), Darwin)
 	SO_LD_FLAGS := -undefined dynamic_lookup -dynamiclib
 else
 	SO_LD_FLAGS := -fpic -shared
+	export CFLAGS += -fpic
 endif
 
 all: ../priv/b64_nif.so
