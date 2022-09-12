@@ -1,6 +1,6 @@
 # Fast Base64 stream encoder/decoder
 
-[![Build Status](https://travis-ci.org/aklomp/base64.png?branch=master)](https://travis-ci.org/aklomp/base64)
+[![Build Status](https://github.com/aklomp/base64/actions/workflows/test.yml/badge.svg)](https://github.com/aklomp/base64/actions/workflows/test.yml)
 
 This is an implementation of a base64 stream encoding/decoding library in C99
 with SIMD (AVX2, NEON, AArch64/NEON, SSSE3, SSE4.1, SSE4.2, AVX) and
@@ -405,9 +405,9 @@ written to standard output.
 
 ## Tests
 
-See `tests/` for a small test suite. Testing is automated with [Travis
-CI](https://travis-ci.org/aklomp/base64), which builds and tests the code
-across various architectures.
+See `tests/` for a small test suite. Testing is automated with
+[GitHub Actions](https://github.com/aklomp/base64/actions), which builds and
+tests the code across various architectures.
 
 ## Benchmarks
 
@@ -441,15 +441,15 @@ x86 processors
 | AMD E-450                                 | 645       | 564       | 625       | 634       | -       | -       | -        | -        |
 | Intel Edison @ 500 MHz                    | 79\*      | 92\*      | 152\*     | 172\*     | -       | -       | -        | -        |
 | Intel Edison @ 500 MHz OPENMP 2 thread    | 158\*     | 184\*     | 300\*     | 343\*     | -       | -       | -        | -        |
-| Intel Edison @ 500 MHz (x86-64)           | 97\*      | 146\*     | 197\*     | 207\*     | -       | -       | -        | -        |
-| Intel Edison @ 500 MHz (x86-64) 2 thread  | 193\*     | 288\*     | 389\*     | 410\*     | -       | -       | -        | -        |
+| Intel Edison @ 500 MHz (x86-64)           | 162       | 119       | 209       | 164       | -       | -       | -        | -        |
+| Intel Edison @ 500 MHz (x86-64) 2 thread  | 319       | 237       | 412       | 329       | -       | -       | -        | -        |
 
 ARM processors
 
 | Processor                                 | Plain enc | Plain dec | NEON32 enc | NEON32 dec | NEON64 enc | NEON64 dec |
 |-------------------------------------------|----------:|----------:|-----------:|-----------:|-----------:|-----------:|
 | Raspberry PI B+ V1.2                      | 46\*      | 40\*      | -          | -          | -          | -          |
-| Raspberry PI 2 B V1.1                     | 85        | 141       | 282        | 225        | -          | -          |
+| Raspberry PI 2 B V1.1                     | 85        | 141       | 300        | 225        | -          | -          |
 | Apple iPhone SE armv7                     | 1056\*    | 895\*     | 2943\*     | 2618\*     | -          | -          |
 | Apple iPhone SE arm64                     | 1061\*    | 1239\*    | -          | -          | 4098\*     | 3983\*     |
 

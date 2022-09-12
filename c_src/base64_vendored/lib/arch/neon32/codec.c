@@ -5,7 +5,7 @@
 #include "../../../include/libbase64.h"
 #include "../../tables/tables.h"
 #include "../../codecs.h"
-#include "../../config.h"
+#include "config.h"
 #include "../../env.h"
 
 #ifdef __arm__
@@ -16,6 +16,11 @@
 
 #ifdef BASE64_USE_NEON32
 #include <arm_neon.h>
+
+// Only enable inline assembly on supported compilers.
+#if defined(__GNUC__) || defined(__clang__)
+#define BASE64_NEON32_USE_ASM
+#endif
 
 static inline uint8x16_t
 vqtbl1q_u8 (const uint8x16_t lut, const uint8x16_t indices)
