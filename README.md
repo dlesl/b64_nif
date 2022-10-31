@@ -1,6 +1,8 @@
 b64_nif
 =====
 
+[![Hex pm](http://img.shields.io/hexpm/v/b64_nif.svg?style=flat)](https://hex.pm/packages/b64_nif)
+
 Erlang's `base64` module is implemented in Erlang and rather slow. This library
 provides a very fast alternative using [aklomp's
 base64](https://github.com/aklomp/base64).
@@ -16,7 +18,7 @@ which takes a similar approach. This library behaves slightly differently in tha
 Use
 ---
 
-Add it to your `rebar.config`, for example `{deps, [{b64_nif, "0.1.2"}]}.`
+Add it to your `rebar.config`, for example `{deps, [{b64_nif, "0.1.4"}]}.`
 
 Use `b64_nif:encode/1` and `b64_nif:decode/1` as drop-in replacements for
 `base64:encode/1` and `base64:decode/1`.
