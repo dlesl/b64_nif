@@ -4,10 +4,10 @@
 -on_load(init/0).
 
 encode(_Data) ->
-  exit(nif_not_loaded).
+  erlang:nif_error(nif_not_loaded).
 
 decode(_Data) ->
-  exit(nif_not_loaded).
+  erlang:nif_error(nif_not_loaded).
 
 init() ->
   Nif = filename:join([code:priv_dir(b64_nif), "b64_nif"]),
